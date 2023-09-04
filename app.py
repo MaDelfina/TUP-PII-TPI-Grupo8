@@ -1,5 +1,4 @@
 # Trabajo Práctico I - Programación II
-
 import os
 import bibloteca
 
