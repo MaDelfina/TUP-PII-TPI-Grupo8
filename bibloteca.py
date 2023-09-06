@@ -1,4 +1,4 @@
-import libro as l
+import libro as l #acceder a los objetos
 import cod_generator
 
 # Crear una lista vacía para almacenar los libros
@@ -60,7 +60,7 @@ def prestar_ejemplar_libro():
         if libro['cant_ej_pr'] > 0:
             print(f"Cantidad de ejemplares prestados: {libro['cant_ej_pr']}")
         else:
-            print("No tiene ejemplares preatdos.")
+            print("No tiene ejemplares preatdos")
 
 def devolver_ejemplar_libro():
     codigo_ingresado = input("Ingrese el codigo del libro para gestionar la devolucion: ")
@@ -70,14 +70,14 @@ def devolver_ejemplar_libro():
     for libro in libros:
         if libro['cod'] == codigo_ingresado:
             if libro['cant_ej_pr'] > 0:
-                libro_encontrado = libro
+                libro_encontrado = libro #almacenamos el diccionario del libro encontrado en la variable libro_encontrado
             else:
                 print("El libro no tiene ejemplares prestados")
 
     if libro_encontrado is False:
-        print("El codigo no existe.") #cuando el libro no tiene ejemplares nos salta este print tambien
+        print("El codigo no existe") #cuando el libro no tiene ejemplares nos salta este print tambien
     else:
-        confirmacion = input("¿Quiere confirmar la devolucion? (si/no):")
+        confirmacion = input("¿Quiere confirmar la devolucion? (si/no): ")
         if confirmacion == "si":
             print("Confirmo la devolucion del libro")
             libro_encontrado['cant_ej_ad'] += 1
@@ -96,7 +96,7 @@ def nuevo_libro():
     return libro_nuevo
 
 def registrar_nuevo_libro():
-    nuevo_libro_datos = nuevo_libro() #llama a la funcion nuevo_libro() para crear un nuevo libro
+    nuevo_libro_datos = nuevo_libro() #llamamos a la funcion nuevo_libro() para crear un nuevo libro
 
     codigo = nuevo_libro_datos['cod']
     encontrado = False
